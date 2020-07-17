@@ -4,7 +4,7 @@ import "./ResultsItem.css";
 
 class ResultsItem extends React.Component {
   render() {
-    return <div></div>;
+    return <div>I'm ResultsItem</div>;
   }
 }
 

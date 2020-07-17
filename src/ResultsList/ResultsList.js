@@ -5,9 +5,7 @@ import "./ResultsList.css";
 
 class ResultsList extends React.Component {
   render() {
-    return resultsArr.map(() => {
-      <ResultsItem />;
-    });
+    return <ResultsItem />;
   }
 }
 

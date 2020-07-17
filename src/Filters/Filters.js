@@ -4,7 +4,7 @@ import "./Filters.css";
 
 class Filters extends React.Component {
   render() {
-    return <div></div>;
+    return <div>I'm Filters</div>;
   }
 }
 

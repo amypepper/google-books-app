@@ -25,6 +25,8 @@ const booksAPI = {
 function App() {
   return (
     <main>
+      <div>{booksAPI.params}</div>
+      <div>{booksAPI.urls}</div>
       <NavBar />
       <SearchBar />
       <ResultsList />
