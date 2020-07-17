@@ -24,13 +24,15 @@ const booksAPI = {
 
 function App() {
   return (
-    <main>
-      <div>{booksAPI.params}</div>
-      <div>{booksAPI.urls}</div>
+    <div>
       <NavBar />
-      <SearchBar />
-      <ResultsList />
-    </main>
+      <main>
+        <div>{booksAPI.params}</div>
+        <div>{booksAPI.urls}</div>
+        <SearchBar />
+        <ResultsList />
+      </main>
+    </div>
   );
 }
 
