@@ -1,6 +1,9 @@
 import React from "react";
 
 import "./App.css";
+import NavBar from "./NavBar/NavBar";
+import ResultsList from "./ResultsList/ResultsList";
+import SearchBar from "./SearchBar/SearchBar";
 
 const booksAPI = {
   urls: [
@@ -19,6 +22,14 @@ const booksAPI = {
   ],
 };
 
-function App() {}
+function App() {
+  return (
+    <main>
+      <NavBar />
+      <SearchBar />
+      <ResultsList />
+    </main>
+  );
+}
 
 export default App;
