@@ -7,8 +7,8 @@ class SearchBar extends React.Component {
   render() {
     return (
       <section>
-        <div>
-          <form>
+        <form>
+          <fieldset className="search-text">
             <label htmlFor="search">Search:</label>
             <input
               type="text"
@@ -16,12 +16,10 @@ class SearchBar extends React.Component {
               id="search"
               placeholder="Search term here"
             />
-            <button type="submit">Search</button>
-          </form>
-        </div>
-        <div>
-          <Filters />
-        </div>
+          </fieldset>
+          <Filters filterParams={this.props.filterParams} />
+          <button type="submit">Search</button>
+        </form>
       </section>
     );
   }
