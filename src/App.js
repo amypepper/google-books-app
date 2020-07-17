@@ -3,7 +3,6 @@ import React from "react";
 import "./App.css";
 import NavBar from "./NavBar/NavBar";
 import ResultsList from "./ResultsList/ResultsList";
-import SearchBar from "./SearchBar/SearchBar";
 
 const booksAPI = {
   urls: [
@@ -29,7 +28,6 @@ function App() {
       <main>
         <div>{booksAPI.params}</div>
         <div>{booksAPI.urls}</div>
-        <SearchBar />
         <ResultsList />
       </main>
     </div>

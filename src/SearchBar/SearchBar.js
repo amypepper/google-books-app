@@ -5,7 +5,25 @@ import "./SearchBar.css";
 
 class SearchBar extends React.Component {
   render() {
-    return <Filters />;
+    return (
+      <section>
+        <div>
+          <form>
+            <label htmlFor="search">Search:</label>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search term here"
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div>
+          <Filters />
+        </div>
+      </section>
+    );
   }
 }
 
