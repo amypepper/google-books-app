@@ -4,8 +4,8 @@ import "./ResultsItem.css";
 
 class ResultsItem extends React.Component {
   render() {
-    return this.props.results.items.map((item) => (
-      <li>
+    return this.props.results.items.map((item, i) => (
+      <li key={i}>
         {item.volumeInfo.title} by{" "}
         {item.volumeInfo.authors.map((author) => author)}
       </li>
