@@ -4,7 +4,12 @@ import "./ResultsItem.css";
 
 class ResultsItem extends React.Component {
   render() {
-    return <div>I'm ResultsItem</div>;
+    return this.props.results.items.map((item, i) => (
+      <li key={i}>
+        {item.volumeInfo.title} by{" "}
+        {item.volumeInfo.authors.map((author) => author)}
+      </li>
+    ));
   }
 }
 
