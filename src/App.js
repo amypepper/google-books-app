@@ -21,32 +21,6 @@ const booksAPI = {
   },
 };
 
-// const sampleResults = {
-//   kind: "books#volumes",
-//   items: [
-//     {
-//       kind: "books#volume",
-//       id: "_ojXNuzgHRcC",
-//       etag: "OTD2tB19qn4",
-//       selfLink: "https://www.googleapis.com/books/v1/volumes/_ojXNuzgHRcC",
-//       volumeInfo: {
-//         title: "Flowers",
-//         authors: ["Vijaya Khisty Bodach"],
-//       },
-//     },
-//     {
-//       kind: "books#volume",
-//       id: "RJxWIQOvoZUC",
-//       etag: "NsxMT6kCCVs",
-//       selfLink: "https://www.googleapis.com/books/v1/volumes/RJxWIQOvoZUC",
-//       volumeInfo: {
-//         title: "Flowers",
-//         authors: ["Gail Saunders-Smith"],
-//       },
-//     },
-//   ],
-// };
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -76,7 +50,7 @@ class App extends React.Component {
       <div>
         <NavBar filterParams={booksAPI.params} />
         <main>
-          <ResultsList results={sampleResults} />
+          <ResultsList results={this.state.volumes} />
         </main>
       </div>
     );

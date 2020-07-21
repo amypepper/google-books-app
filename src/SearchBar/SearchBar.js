@@ -6,21 +6,19 @@ import "./SearchBar.css";
 class SearchBar extends React.Component {
   render() {
     return (
-      <section>
-        <form>
-          <fieldset className="search-text">
-            <label htmlFor="search">Search:</label>
-            <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search term here"
-            />
-          </fieldset>
-          <Filters filterParams={this.props.filterParams} />
+      <form>
+        <fieldset className="search-text">
+          <label htmlFor="search">Search:</label>
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search term here"
+          />
           <button type="submit">Search</button>
-        </form>
-      </section>
+        </fieldset>
+        <Filters filterParams={this.props.filterParams} />
+      </form>
     );
   }
 }
