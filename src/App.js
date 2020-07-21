@@ -29,7 +29,6 @@ class App extends React.Component {
       searchTerm: null,
       printType: null,
       bookType: null,
-      results: null,
     };
   }
 
@@ -46,12 +45,15 @@ class App extends React.Component {
   }
 
   render() {
+    const volumes = this.state.volumes ? (
+      <ResultsList results={this.state.volumes} />
+    ) : (
+      <div className="results_list__placeholder"></div>
+    );
     return (
       <div>
         <NavBar filterParams={booksAPI.params} />
-        <main>
-          <ResultsList results={this.state.volumes} />
-        </main>
+        <main>{volumes}</main>
       </div>
     );
   }
