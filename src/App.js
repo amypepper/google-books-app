@@ -38,7 +38,8 @@ class App extends React.Component {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        const volumes = data.items.map((volume) => volume.volumeInfo);
+        const volumes = data.items.map((volume) => volume);
+
         this.setState({ volumes });
         console.log(volumes);
       });
