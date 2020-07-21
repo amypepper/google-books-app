@@ -7,7 +7,7 @@ class ResultsItem extends React.Component {
     return this.props.results.map((volume, i) => (
       <li key={i}>
         <h3>{volume.title}</h3>
-        <p>{volume.authors.map((author) => author + ", ")}</p>
+        <p>{volume.authors}</p>
       </li>
     ));
   }
