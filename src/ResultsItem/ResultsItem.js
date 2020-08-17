@@ -4,7 +4,8 @@ import "./ResultsItem.css";
 
 class ResultsItem extends React.Component {
   render() {
-    return this.props.results.map((volume, i) => (
+    const stateArr = this.props.results.flat();
+    return stateArr.map((volume, i) => (
       <li key={i}>
         <h3>{volume.volumeInfo.title}</h3>
 
@@ -25,6 +26,7 @@ class ResultsItem extends React.Component {
               {volume.volumeInfo.description}
             </p>
           )}
+
         <div>
           {volume.volumeInfo.imageLinks && (
             <img

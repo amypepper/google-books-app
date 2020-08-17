@@ -8,7 +8,10 @@ class NavBar extends React.Component {
     return (
       <header>
         <h1>Google Books App</h1>
-        <SearchBar filterParams={this.props.filterParams} />
+        <SearchBar
+          filterParams={this.props.filterParams}
+          handleSearch={this.props.handleSearch}
+        />
       </header>
     );
   }

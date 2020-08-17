@@ -4,6 +4,7 @@ import "./App.css";
 import NavBar from "./NavBar/NavBar";
 import ResultsList from "./ResultsList/ResultsList";
 
+// const APIKEY = process.env.REACT_APP_API_KEY;
 const booksAPI = {
   urls: [
     "https://www.googleapis.com/books/v1/{collectionName}/resourceID?parameters",
@@ -26,34 +27,30 @@ class App extends React.Component {
     super(props);
     this.state = {
       volumes: [],
-      searchTerm: null,
       printType: null,
       bookType: null,
     };
   }
 
-  componentDidMount() {
-    const url =
-      "https://www.googleapis.com/books/v1/volumes?q=shakespeare&{process.env.REACT_APP_API_KEY}";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        const volumes = data.items.map((volume) => volume);
-
-        this.setState({ volumes });
-        console.log(volumes);
-      });
+  handleSearch(searchResults) {
+    this.setState({
+      volumes: [...this.state.volumes, searchResults],
+    });
   }
 
   render() {
-    const volumes = this.state.volumes ? (
+    console.log("this is state.volumes: ", this.state.volumes);
+    const volumes = this.state.volumes[0] ? (
       <ResultsList results={this.state.volumes} />
     ) : (
       <div className="results_list__placeholder"></div>
     );
     return (
       <div>
-        <NavBar filterParams={booksAPI.params} />
+        <NavBar
+          filterParams={booksAPI.params}
+          handleSearch={(searchResults) => this.handleSearch(searchResults)}
+        />
         <main>{volumes}</main>
       </div>
     );
